@@ -1,0 +1,9 @@
+[
+    {"id":"q1",
+    "titulo":"Pergunta 1",
+    "prompt": "Quem é o Cristiano Ronaldo?",
+    "resposta": "Jogador de futebol português, considerado um dos melhores jogadores de todos os tempos.    ",
+    "dica": "Ele é conhecido por sua velocidade, habilidade de drible e precisão de chute.  ",
+    "icon": ""   
+}
+]

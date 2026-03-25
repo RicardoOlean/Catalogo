@@ -1,5 +1,5 @@
 import Mapinha from "./components/Mapinha";
-import "./components/Mapinha.css";
+import "./components/mapinha.css";
 
 export default function App() {
     return (

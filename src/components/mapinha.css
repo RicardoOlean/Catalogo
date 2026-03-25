@@ -9,7 +9,7 @@ body{
 }
 
 .erro{
-    color: rgb(160, 18, 18);
+    color: rgb(255, 255, 255);
     background: #570f0f;
     font-size: 1.2rem;
 }
@@ -19,4 +19,59 @@ body{
     height: 320px;
     border: 2px solid #a2dad0;
     border-radius: 10px;
+}
+
+.painel{
+    background: #d5d3dd;
+    border: 2px solid #6052e2;
+    padding: 1rem;
+    margin-bottom: 2px;
+    border-radius: 12px;
+}
+.painel-topo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.botao{
+    background: #b83030;
+    color: white;
+    border: 0;
+    padding: 6px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.botao:hover{
+    background: #360505;
+    text-decoration: underline;
+}
+
+.painel span{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: cadetblue;
+}
+
+.lista-pontos{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-pontos-intem{
+    display: grid;
+    grid-template-columns: 48px 1fr 110px;
+    gap: 10px;
+    align-items: center;
+    padding: 6px 0;
+    border-top: 1px dashed #ddd;
+}
+
+.dist{
+    text-align: right;
+    color: #230574;
 }

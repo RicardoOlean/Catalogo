@@ -1,5 +1,5 @@
 import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef  } from "react";
 import "leaflet/dist/leaflet.css";
 
 export default function Mapinha() {
@@ -73,7 +73,7 @@ export default function Mapinha() {
     const local = [-22.9137900, -47.0681000];
     const zoomInicial = local ? 15 : 13;
 
-    function ClickHandler() {
+    function ClickHandler({onAdd}) {
         useMapEvents({
             click(e) {
                 const{lat, lng} = e.latlng;
@@ -99,6 +99,25 @@ export default function Mapinha() {
                     </button>
 
                 </div>
+                {pontos.length === 0? ( 
+                    <p> Nenhum ponto adicionado
+                        Clique no mapa para adicionar</p>
+                ):(
+                    <ul className="lista-pontos">
+                        {pontosOrdenados.map((p) =>(
+                            <li key={p.id} className="lista-pontos-item">
+                                <span> #{p.id}</span>
+                                <span>
+                                    {p.lat.toFixed(5)}, {p.lng.toFixed(5)}
+                                </span>
+                                <span className="dist">
+                                    {formatarM(p.distanciaM)}
+                                </span>
+                            </li>
+                        ))}
+
+                    </ul>
+                )}
             </section>
             <MapContainer
                 center={posicao ? local : centroInicial}
@@ -119,7 +138,18 @@ export default function Mapinha() {
                     </Marker>
                 )}    
 
+                {pontos.map((p) => (
+                    <Marker key={p.id} position={[p.lat, p.lng]}>
+                        <Popup>
+                            <div>
+                                <strong> Pont #{p.id}</strong>
+                                <p> Distancia: {formatarM(p.distanciaM)}</p>
+                            </div>
+                        </Popup>
 
+                    </Marker>
+                ))}
+                <ClickHandler onAdd={adicionarPonto}/>
 
             </MapContainer>
         </section>
