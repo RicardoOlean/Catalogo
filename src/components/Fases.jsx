@@ -2,6 +2,7 @@ import QUESTOES from "../../public/data/perguntas.json";
 import "./fases.css";
 import { useState } from "react";
 import { useMemo } from "react";
+import IconGrid from "./IconGrid";
 
 export default function Fases() {
     const [selecionada, setSelecionada] = useState(null);
@@ -55,6 +56,13 @@ export default function Fases() {
 
                 </div>
             </header>
+            <IconGrid 
+                questoes = {QUESTOES}
+                onOpen = {handleOpen}
+                modalOpen = {Boolean(selecionada)}
+                trancada = {trancada}
+                resolvidas = {resolvidas}
+            />
         </main>
 
     )
